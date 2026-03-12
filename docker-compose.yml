@@ -1,0 +1,54 @@
+services:
+  db:
+    image: postgres:17.5-alpine
+    restart: no
+    shm_size: 128mb
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-root}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-root}
+      POSTGRES_DB: TechFood
+    profiles:
+      - dev
+      - prod
+      - db
+
+  adminer:
+    image: adminer
+    restart: no
+    ports:
+      - "8089:8080"
+    profiles:
+      - dev
+      - db
+
+  rabbitmq:
+    image: 'rabbitmq:latest'
+    environment:
+      - 'RABBITMQ_DEFAULT_PASS=root'
+      - 'RABBITMQ_DEFAULT_USER=root'
+    ports:
+      - "5672:5672"
+    profiles:
+      - dev
+      - prod
+
+#  localstack:
+#    image: localstack/localstack:4.13.1
+#    container_name: localstack
+#    ports:
+#      - "4566:4566"
+#    environment:
+#      - SERVICES=s3
+#      - DEBUG=1
+#      - DATA_DIR=/tmp/localstack/data
+#      - AWS_ACCESS_KEY_ID=root
+#      - AWS_SECRET_ACCESS_KEY=root
+#      - DEFAULT_REGION=us-east-1
+#    volumes:
+##      - ./localstack:/tmp/localstack
+#      - "${LOCALSTACK_VOLUME_DIR:-./volume}:/var/lib/localstack"
+#      - /var/run/docker.sock:/var/run/docker.sock
+#    profiles:
+#      - dev

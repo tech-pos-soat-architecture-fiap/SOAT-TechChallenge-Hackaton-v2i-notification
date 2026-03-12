@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v2i</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/@knadh/oat/oat.min.css">
+
+    <script src="https://unpkg.com/@knadh/oat/oat.min.js" defer></script>
+
+    <style>
+        body {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+<h3>Video to Images (v2i)</h3>
+<p>Upload a video to extract its frames as a ZIP file.</p>
+
+<form action="/extract-frames" method="POST" enctype="multipart/form-data">
+
+    <label data-field>
+        Select Video<br/>
+        <input type="file" name="file" accept="video/*" required/>
+    </label>
+
+    <button type="submit" data-variant="primary">Extract Frames</button>
+
+</form>
+
+</body>
+</html>
