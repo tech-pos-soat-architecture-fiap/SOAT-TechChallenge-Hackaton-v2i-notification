@@ -1,4 +1,4 @@
-package br.com.fiap.v2i.queue;
+package br.com.fiap.v2i.notification.queue;
 
 import br.com.fiap.v2i.notification.NotificationService;
 import br.com.fiap.v2i.notification.VideoNotificationMessage;

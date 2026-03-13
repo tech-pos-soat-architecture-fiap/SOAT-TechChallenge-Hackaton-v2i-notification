@@ -1,4 +1,4 @@
-package br.com.fiap.v2i.processing;
+package br.com.fiap.v2i.notification;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

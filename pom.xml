@@ -8,7 +8,7 @@
 		<version>4.0.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>br.com.fiap</groupId>
+	<groupId>br.com.fiap.v2i</groupId>
 	<artifactId>v2i-notification</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>v2i-notification</name>

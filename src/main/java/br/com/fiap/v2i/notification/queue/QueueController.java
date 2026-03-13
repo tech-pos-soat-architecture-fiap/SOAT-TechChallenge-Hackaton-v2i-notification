@@ -1,4 +1,4 @@
-package br.com.fiap.v2i.queue;
+package br.com.fiap.v2i.notification.queue;
 
 import br.com.fiap.v2i.notification.VideoNotificationMessage;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;

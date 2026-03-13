@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: v2i-notification
-          image: hackaton-v2i-notification:v3
+          image: hackaton-v2i-notification:v4
           imagePullPolicy: Never
           ports:
             - containerPort: 8000

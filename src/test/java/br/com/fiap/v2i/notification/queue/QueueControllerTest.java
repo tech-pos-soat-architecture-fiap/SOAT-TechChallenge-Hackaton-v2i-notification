@@ -1,6 +1,8 @@
-package br.com.fiap.v2i.queue;
+package br.com.fiap.v2i.notification.queue;
 
 import br.com.fiap.v2i.notification.VideoNotificationMessage;
+import br.com.fiap.v2i.notification.queue.QueueConfig;
+import br.com.fiap.v2i.notification.queue.QueueController;
 import org.junit.jupiter.api.Test;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;

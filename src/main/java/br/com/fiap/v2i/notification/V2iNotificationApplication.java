@@ -1,4 +1,4 @@
-package br.com.fiap.v2i;
+package br.com.fiap.v2i.notification;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
