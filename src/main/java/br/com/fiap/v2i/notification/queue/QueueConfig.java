@@ -1,4 +1,4 @@
-package br.com.fiap.v2i.queue;
+package br.com.fiap.v2i.notification.queue;
 
 import org.springframework.amqp.core.*;
 import org.springframework.amqp.rabbit.config.SimpleRabbitListenerContainerFactory;

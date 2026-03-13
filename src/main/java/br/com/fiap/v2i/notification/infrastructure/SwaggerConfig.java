@@ -1,4 +1,4 @@
-package br.com.fiap.v2i.infrastructure;
+package br.com.fiap.v2i.notification.infrastructure;
 
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
@@ -21,7 +21,7 @@ public class SwaggerConfig {
     public OpenAPI customOpenAPI() {
         return new OpenAPI()
                 .info(new Info()
-                        .title("Processing Video API")
+                        .title("Notification API")
                         .version("1.0")
                         .description("Documentation of the API using Swagger OpenAPI"));
     }
