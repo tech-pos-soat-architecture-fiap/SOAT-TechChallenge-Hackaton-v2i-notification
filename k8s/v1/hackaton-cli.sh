@@ -18,11 +18,11 @@ fi
 # Criar imagem docker
 echo "🔨 Criando imagem docker..."
 cd ../../  # Volta para a raiz onde está o Dockerfile
-docker build --no-cache -t hackaton-v2i-notification:v2 .
+docker build --no-cache -t hackaton-v2i-notification:v3 .
 
 # Copiar imagem para o minikube
 echo "📦 Copiando imagem para o minikube..."
-minikube image load hackaton-v2i-notification:v2
+minikube image load hackaton-v2i-notification:v3
 
 # Volta para a pasta dos manifestos
 cd k8s/v1
@@ -48,7 +48,7 @@ export HOST_IP=$LOCAL_IP
 echo "⚙️ Aplicando recursos..."
 envsubst < hackaton-configmap-v1.yaml | kubectl apply -f -
 kubectl apply -f hackaton-db-secret-v1.yaml
-kubectl apply -f v2i-notification-service-v1.yaml
+kubectl apply -f hackaton-service-v1.yaml
 kubectl apply -f hackaton-hpa-v1.yaml
 kubectl apply -f hackaton-deployment-v1.yaml
 
