@@ -32,7 +32,7 @@ class EmailServiceTest {
 
     @BeforeEach
     void setUp() {
-        emailService = new EmailService(mailSender, environment);
+        emailService = new EmailService(mailSender);
         ReflectionTestUtils.setField(emailService, "from", FROM);
     }
 

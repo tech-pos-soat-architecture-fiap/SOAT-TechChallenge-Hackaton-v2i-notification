@@ -17,18 +17,12 @@ public class EmailService {
     private static final Logger logger = LoggerFactory.getLogger(EmailService.class);
 
     private final JavaMailSender mailSender;
-    private final Environment environment;
 
     @Value("${notification.mail.from}")
     private String from;
 
-    public EmailService(JavaMailSender mailSender, Environment environment) {
+    public EmailService(JavaMailSender mailSender) {
         this.mailSender = mailSender;
-        this.environment = environment;
-    }
-
-    private boolean isProduction() {
-        return Arrays.asList(environment.getActiveProfiles()).contains("production");
     }
 
     public void sendSuccessEmail(String to, String videoId, String outputUrl) {
@@ -56,10 +50,6 @@ public class EmailService {
     }
 
     private void send(String to, String subject, String body) {
-        if (!isProduction()) {
-            logger.info("[EMAIL - NON-PROD] From: '{}' | To: '{}' | Subject: '{}'\n{}", from, to, subject, body);
-            return;
-        }
         try {
             SimpleMailMessage message = new SimpleMailMessage();
             message.setFrom(from);
