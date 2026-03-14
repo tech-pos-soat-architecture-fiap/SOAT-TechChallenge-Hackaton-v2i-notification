@@ -12,7 +12,7 @@ public class QueueConfig {
 
     public static final String EXCHANGE_NAME = "video-notification-exchange";
     public static final String QUEUE_NAME = "video-notification-queue";
-    public static final String ROUTING_KEY = "video.notification";
+    public static final String ROUTING_KEY = "video.processed";
 
     @Bean
     Queue notificationQueue() {

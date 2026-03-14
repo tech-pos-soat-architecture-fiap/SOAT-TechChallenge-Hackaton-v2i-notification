@@ -24,6 +24,11 @@ public class NotificationService {
         logger.info("Processing notification for videoId='{}', status='{}', userEmail='{}'",
                 message.getVideoId(), message.getStatus(), message.getUserEmail());
 
+        if (message.getUserEmail() == null || message.getUserEmail().isBlank()) {
+            logger.error("Missing user email for videoId='{}'. Cannot send notification.", message.getVideoId());
+            return;
+        }
+
         switch (message.getStatus()) {
             case "SUCCESS" -> notifySuccess(message);
             case "FAILURE" -> notifyFailure(message);
@@ -43,5 +48,4 @@ public class NotificationService {
                 message.getVideoId(), message.getUserEmail(), message.getErrorMessage());
         emailService.sendFailureEmail(message.getUserEmail(), message.getVideoId(), message.getErrorMessage());
     }
-
 }
